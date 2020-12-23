@@ -18,7 +18,7 @@
                                         <v-slider
                                             v-model="rate"
                                             class="align-center"
-                                            :max="1000000"
+                                            :max="1250000"
                                             :min="1000"
                                             hide-details
                                         >
@@ -205,6 +205,9 @@ export default {
                 }
 
                 this.scheduleDataRequest();
+            }).catch(reason => {
+                this.acquisitionEnabled = false;
+                window.alert(reason.toString())
             });
         },
         scheduleDataRequest() {
