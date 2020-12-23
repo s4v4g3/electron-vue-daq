@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { getData } from "../ipc/renderer";
 export default {
     name: "DAQDisplay",
     data: () => ({
@@ -32,6 +33,7 @@ export default {
             },
 
             boost: {
+                enabled: true,
                 useGPUTranslations: true,
                 usePreAllocated: true,
             },
@@ -70,11 +72,14 @@ export default {
                 ],
             },
         };
+        this.requestData();
     },
     methods: {
-        updateData(response) {
-            this.chartOptions.series = [{ data: response }];
-            //this.chartOptions = { ...this.chartOptions };
+        requestData() {
+            getData().then((response) => {
+                this.chartOptions.series = [{ name: "AI Ch0", data: response }];
+                setTimeout(this.requestData(), 5);
+            });
         },
     },
 };

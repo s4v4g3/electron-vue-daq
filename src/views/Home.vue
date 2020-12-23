@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { getData } from "../ipc/renderer";
+
 import DAQDisplay from "../components/DAQDisplay";
 export default {
     name: "Home",
@@ -13,23 +13,11 @@ export default {
     data: () => ({
     }),
     created() {
-        this.requestData();
     },
     destroyed() {
     },
     methods: {
-        requestData() {
-            
-            getData().then((response) => {
-                this.onGetDataReply(response);
-                setTimeout(this.requestData(), 5);
-            });
-            
-            
-        },
-        onGetDataReply(response) {
-            return this.$refs.daqDisplay.updateData(response);
-        },
+       
     },
     computed: {
     }

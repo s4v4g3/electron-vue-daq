@@ -5,6 +5,9 @@ module.exports = {
   pluginOptions: {
     electronBuilder: {
         externals:["electron-edge-js"],
+        builderOptions: {
+            extraResources:['src/DAQmxClassLibrary.dll']
+        },
       // Use this to change the entrypoint of your app's main process
       mainProcessFile: 'src/background.ts',
       // Provide an array of files that, when changed, will recompile the main process and restart Electron

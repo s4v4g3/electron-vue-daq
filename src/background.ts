@@ -70,6 +70,14 @@ class Main {
 }
 
 // Here we go!
-(new Main()).init();
-
+try{
+    (new Main()).init();
+}
+catch(e) {
+    console.log(e);
+    throw e;
+}
+finally {
+    app.quit();
+}
 

@@ -1,5 +1,5 @@
 {
-  "name": "electron-vue-project",
+  "name": "electron-vue-daq",
   "version": "0.1.0",
   "private": true,
   "main": "background.js",

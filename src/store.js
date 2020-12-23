@@ -17,4 +17,3 @@ var store = new Vuex.Store({
 });
 
 export default store;
-store.dispatch("initialize",null); 

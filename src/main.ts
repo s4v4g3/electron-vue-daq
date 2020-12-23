@@ -10,11 +10,13 @@ import annotationsInit from "highcharts/modules/annotations";
 import stockInit from "highcharts/modules/stock"
 import highchartsMore from "highcharts/highcharts-more";
 import dumbbellInit from "highcharts/modules/dumbbell"
+import boost from "highcharts/modules/boost"
 annotationsInit(Highcharts);
 exportingInit(Highcharts);
 stockInit(Highcharts)
 highchartsMore(Highcharts)
 dumbbellInit(Highcharts)
+boost(Highcharts)
 
 Vue.config.productionTip = false
 
