@@ -48,7 +48,7 @@ class Main {
                 webPreferences: {
                     preload: preloadPath
                 },
-                fullscreen: true
+                fullscreen: false
             })
 
         if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -69,15 +69,14 @@ class Main {
     }
 }
 
-// Here we go!
+// Initialize app and bail out if we get any errors
 try{
     (new Main()).init();
 }
 catch(e) {
     console.log(e);
+    app.quit();
     throw e;
 }
-finally {
-    app.quit();
-}
+
 

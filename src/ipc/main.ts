@@ -23,7 +23,7 @@ export class IpcHandlers {
 
   private async getData(args: any) {
     return await new Promise((resolve, reject) => {
-      this.driver("", (error, result) => {
+      this.driver(args, (error, result) => {
         if (error) reject(error);
         let len = result.length / 8;
         let daqdata = new Array(len);
